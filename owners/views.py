@@ -18,7 +18,7 @@ class OwnerView(View):
         owners = Owner.objects.all()
         result = []
         for owner in owners:
-            dogs = [{"name":dog.name} for dog in Dog.objects.filter(owner=owner.id)]
+            dogs = [{"name":dog.name, "age":dog.age} for dog in Dog.objects.filter(owner=owner.id)]
             result.append(
                 {
                     "name":owner.name,
